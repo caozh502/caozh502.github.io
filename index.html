@@ -25,7 +25,7 @@
       <a href="#about">关于</a>
       <a href="#projects">项目</a>
       <a href="#contact">联系</a>
-      <a href="#" id="lang-toggle" onclick="toggleLang()">EN</a>
+      <a href="javascript:void(0)" id="lang-toggle" onclick="toggleLang()">中文</a>
     </div>
   </nav>
 </header>
@@ -171,22 +171,19 @@
 <script>
 function toggleLang() {
   var btn = document.getElementById('lang-toggle');
-  var toEn = btn.textContent === 'EN';
-  var showing = toEn ? '.zh' : '.en';
-  var hiding = toEn ? '.en' : '.zh';
-  var show = document.querySelectorAll(showing);
-  var hide = document.querySelectorAll(hiding);
+  var toZh = btn.textContent === '中文';
 
-  // Fade out current language
+  var show = document.querySelectorAll(toZh ? '.zh' : '.en');
+  var hide = document.querySelectorAll(toZh ? '.en' : '.zh');
+
   hide.forEach(function(el) { el.classList.add('fade-out'); });
 
-  // After transition, swap display
   setTimeout(function() {
     hide.forEach(function(el) { el.style.display = 'none'; el.classList.remove('fade-out'); });
     show.forEach(function(el) { el.style.display = ''; });
   }, 250);
 
-  btn.textContent = toEn ? '中文' : 'EN';
+  btn.textContent = toZh ? 'EN' : '中文';
 }
 </script>
 

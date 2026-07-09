@@ -39,9 +39,9 @@ body {
     transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
-/* Default: show zh, hide en */
-.en { display: none; }
-.zh { display: inline; }
+/* Default: show EN, hide ZH */
+.en { display: inline; }
+.zh { display: none; }
 
 /* Animation classes — opacity transition before display change */
 .zh.fade-out, .en.fade-out { opacity: 0; }
