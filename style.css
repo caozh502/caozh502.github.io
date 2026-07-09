@@ -35,10 +35,9 @@ body {
     max-width: 65ch;
 }
 
-/* Language display controlled by JS inline style — no CSS defaults */
-/* Animation classes — opacity transition before display change */
-.zh.fade-out, .en.fade-out { opacity: 0; }
-.zh, .en { transition: opacity 0.25s ease; }
+/* Default: show EN, hide ZH — body class toggles visibility */
+body:not(.lang-zh) .zh { display: none; }
+body.lang-zh .en { display: none; }
 
 header {
     position: sticky;
