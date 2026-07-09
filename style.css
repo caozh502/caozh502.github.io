@@ -39,6 +39,24 @@ body {
     transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
+/* Default: show zh, hide en */
+.en { opacity: 0; visibility: hidden; }
+.zh { opacity: 1; visibility: visible; }
+
+/* EN mode via body class */
+body.lang-en .en { opacity: 1; visibility: visible; }
+body.lang-en .zh { opacity: 0; visibility: hidden; }
+
+/* Lang-pair wrapper — stack zh+en at same position */
+.lp {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.lp > .zh,
+.lp > .en {
+    grid-area: 1 / 1;
+}
+
 header {
     position: sticky;
     top: 0;
