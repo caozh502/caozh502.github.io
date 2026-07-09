@@ -36,7 +36,7 @@ body {
 }
 
 .zh, .en {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 header {
@@ -103,7 +103,7 @@ main {
     border: 1px solid var(--stroke);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 30px 80px rgba(0, 10, 40, 0.5);
 }
 
 .hero h1 {
@@ -191,7 +191,7 @@ main {
     border-radius: 14px;
     background: #0f182a;
     border: 1px solid var(--stroke);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 10, 40, 0.5);
 }
 
 .floating-card h3 {
@@ -371,6 +371,19 @@ footer {
     color: var(--muted);
     text-align: center;
     font-size: 14px;
+}
+
+/* Noise overlay — subtle grain to break flat digital feel */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj4KICA8ZmlsdGVyIGlkPSJuIj4KICAgIDxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+CiAgPC9maWx0ZXI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIxIi8+Cjwvc3ZnPg==");
+    background-repeat: repeat;
+    background-size: 200px 200px;
 }
 
 @media (max-width: 620px) {

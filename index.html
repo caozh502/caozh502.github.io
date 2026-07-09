@@ -185,8 +185,14 @@ function toggleLang() {
   var en = document.querySelectorAll('.en');
   var btn = document.getElementById('lang-toggle');
   var showEn = btn.textContent === 'EN';
-  for (var i = 0; i < cn.length; i++) cn[i].style.display = showEn ? 'none' : '';
-  for (var i = 0; i < en.length; i++) en[i].style.display = showEn ? '' : 'none';
+  for (var i = 0; i < cn.length; i++) {
+    cn[i].style.opacity = showEn ? '0' : '1';
+    cn[i].style.visibility = showEn ? 'hidden' : 'visible';
+  }
+  for (var i = 0; i < en.length; i++) {
+    en[i].style.opacity = showEn ? '1' : '0';
+    en[i].style.visibility = showEn ? 'visible' : 'hidden';
+  }
   btn.textContent = showEn ? '中文' : 'EN';
 }
 </script>
