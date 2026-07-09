@@ -35,21 +35,10 @@ body {
     max-width: 65ch;
 }
 
-.zh, .en {
-    transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-/* Default: show EN, hide ZH */
-.en { display: inline; }
-.zh { display: none; }
-
+/* Language display controlled by JS inline style — no CSS defaults */
 /* Animation classes — opacity transition before display change */
 .zh.fade-out, .en.fade-out { opacity: 0; }
 .zh, .en { transition: opacity 0.25s ease; }
-
-/* Lang-pair wrapper */
-.lp > .zh,
-.lp > .en { display: inline; }
 
 header {
     position: sticky;
