@@ -40,22 +40,16 @@ body {
 }
 
 /* Default: show zh, hide en */
-.en { opacity: 0; visibility: hidden; }
-.zh { opacity: 1; visibility: visible; }
+.en { display: none; }
+.zh { display: inline; }
 
-/* EN mode via body class */
-body.lang-en .en { opacity: 1; visibility: visible; }
-body.lang-en .zh { opacity: 0; visibility: hidden; }
+/* Animation classes — opacity transition before display change */
+.zh.fade-out, .en.fade-out { opacity: 0; }
+.zh, .en { transition: opacity 0.25s ease; }
 
-/* Lang-pair wrapper — stack zh+en at same position */
-.lp {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+/* Lang-pair wrapper */
 .lp > .zh,
-.lp > .en {
-    grid-area: 1 / 1;
-}
+.lp > .en { display: inline; }
 
 header {
     position: sticky;

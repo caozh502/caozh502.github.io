@@ -170,9 +170,23 @@
 
 <script>
 function toggleLang() {
-  document.body.classList.toggle('lang-en');
-  document.getElementById('lang-toggle').textContent =
-    document.body.classList.contains('lang-en') ? '中文' : 'EN';
+  var btn = document.getElementById('lang-toggle');
+  var toEn = btn.textContent === 'EN';
+  var showing = toEn ? '.zh' : '.en';
+  var hiding = toEn ? '.en' : '.zh';
+  var show = document.querySelectorAll(showing);
+  var hide = document.querySelectorAll(hiding);
+
+  // Fade out current language
+  hide.forEach(function(el) { el.classList.add('fade-out'); });
+
+  // After transition, swap display
+  setTimeout(function() {
+    hide.forEach(function(el) { el.style.display = 'none'; el.classList.remove('fade-out'); });
+    show.forEach(function(el) { el.style.display = ''; });
+  }, 250);
+
+  btn.textContent = toEn ? '中文' : 'EN';
 }
 </script>
 
