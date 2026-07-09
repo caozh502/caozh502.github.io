@@ -15,7 +15,7 @@
 
 body {
     margin: 0;
-    font-family: "Space Grotesk", "Manrope", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Space Grotesk", "Manrope", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
     color: var(--text);
     background: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.08), transparent 30%),
         radial-gradient(circle at 80% 0%, rgba(249, 115, 22, 0.09), transparent 28%),
@@ -24,6 +24,19 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    text-wrap: pretty;
+}
+
+.hero p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 65ch;
+}
+
+.zh, .en {
+    transition: opacity 0.2s ease;
 }
 
 header {
@@ -150,6 +163,14 @@ main {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn.primary:active {
+    transform: scale(0.97);
+}
+
 .btn.primary:hover {
     box-shadow: 0 16px 36px rgba(34, 197, 94, 0.45);
 }
@@ -216,11 +237,17 @@ section {
     background: var(--card);
     backdrop-filter: blur(4px);
     transition: 150ms ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-3px);
     border-color: rgba(255, 255, 255, 0.18);
+}
+
+.card > p {
+    flex: 1;
 }
 
 .card-tag {
@@ -234,6 +261,19 @@ section {
     margin-bottom: 10px;
     background: rgba(34, 197, 94, 0.12);
     color: var(--accent);
+}
+
+.card.wide {
+    grid-column: 1 / -1;
+}
+
+.card.wide > p {
+    flex: none;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
 }
 
 .card.wide {
@@ -304,7 +344,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: auto;
+    padding-top: 10px;
 }
 
 .link-chip {
