@@ -1,0 +1,3 @@
+# Hermes agent temporary files
+.hermes-tmp*/
+.hermes-tmp.*
