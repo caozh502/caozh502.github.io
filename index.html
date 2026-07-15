@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caleb Cao | 个人主页</title>
-  <meta name="description" content="Caleb Cao — 测试自动化工程师 & 个人开发者。Python / C++ / HiL / CI/CD。开源项目与投资工具。" />
-  <meta property="og:title" content="Caleb Cao | 个人主页" />
-  <meta property="og:description" content="测试自动化工程师 & 个人开发者。开源项目、投资工具、创意实验。" />
+  <title>Caleb Cao · Portfolio</title>
+  <meta name="description" content="Caleb Cao — Test Automation Engineer & Indie Developer. Python / C++ / HiL / CI/CD / AI Agents." />
+  <meta property="og:title" content="Caleb Cao · Portfolio" />
+  <meta property="og:description" content="Test Automation Engineer & Indie Developer. Open-source projects, investment tools, and creative experiments." />
   <meta property="og:url" content="https://caozh502.github.io" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🛠️</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🕹️</text></svg>" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
+<!-- Scanline overlay -->
+<div class="scanlines"></div>
+
 <header>
   <nav>
-    <div class="logo">Caleb<span>.dev</span></div>
+    <div class="logo"><span class="cursor-blink">▶</span> Jiale Cao (Caleb)</div>
     <div class="nav-links">
-      <a href="#about">关于</a>
-      <a href="#projects">项目</a>
-      <a href="#contact">联系</a>
+      <a href="#about" data-en="About" data-zh="关于"></a>
+      <a href="#projects" data-en="Projects" data-zh="项目"></a>
+      <a href="#contact" data-en="Contact" data-zh="联系"></a>
       <a href="javascript:void(0)" id="lang-toggle" onclick="toggleLang()">中文</a>
     </div>
   </nav>
@@ -32,144 +37,303 @@
 
 <main>
 
-  <!-- Hero -->
+  <!-- ═══════════ HERO ═══════════ -->
   <section class="hero" id="top">
-    <div>
-      <h1><span class="zh">欢迎来到我的个人主页</span><span class="en">Welcome to My Portfolio</span></h1>
-      <p><span class="zh">我是 Caleb，一名自动化测试工程师 & 个人开发者。这里汇集了我的开源项目、投资工具和创意实验。</span><span class="en">I'm Caleb, an automation test engineer & indie developer. This page collects my open-source projects, investment tools, and creative experiments.</span></p>
+    <div class="hero-content">
+      <div class="pixel-badge">SYSTEM<span class="blink">_</span>READY</div>
+      <h1>
+        <span class="en">Hi, I'm <span class="highlight">Caleb</span></span>
+        <span class="zh">你好，我是 <span class="highlight">Caleb</span></span>
+      </h1>
+      <p class="subtitle">
+        <span class="en">Test Automation Engineer · Python / C++ · HiL / CI/CD</span>
+        <span class="zh">测试自动化工程师 · Python / C++ · HiL / CI/CD</span>
+      </p>
+      <p class="hero-desc">
+        <span class="en">Building reliable test systems &amp; open-source tools. Open to <strong>QA / Test Automation</strong> roles across industries — MedTech, Aerospace, Automotive, AI &amp; more.</span>
+        <span class="zh">构建可靠的测试系统和开源工具。开放接受各行业的 <strong>QA / 测试自动化</strong> 岗位 —— 医疗、航天、汽车、AI 等。</span>
+      </p>
       <div class="cta">
-        <a class="btn primary" href="#projects">查看项目</a>
+        <a class="btn primary" href="#projects">
+          <span class="en">View Projects →</span>
+          <span class="zh">查看项目 →</span>
+        </a>
         <a class="btn" href="https://www.linkedin.com/in/jiale-cao-49b136203/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="floating-card">
-        <h3>📍 Location</h3>
-        <p>Munich, Germany</p>
-        <h3>🔧 Focus</h3>
-        <p>Python / C++ / Test Automation / HiL / CI/CD</p>
-        <h3>📜 Certification</h3>
-        <p>ISTQB&reg; CTFL</p>
+    <div class="hero-terminal">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">profile.yml</span>
+        </div>
+        <div class="terminal-body">
+          <pre><span class="prompt">$</span> cat profile.yml
+          </pre>
+          <pre class="yml-block">name:           Jiale Cao (Caleb)
+location:       Munich, Germany
+company:        Akkodis
+role:           QA Engineer · Test Automation · HiL
+education:
+  - M.Sc. Mechatronics &amp; IT @ KIT
+  - B.Eng. Mechanical Engineering
+certs:
+  - ISTQB&reg; CTFL
+  - STACKIT Cloud Engineer
+  - DevOps Grundlagen (LinkedIn)
+status:         <span class="ready">OPEN_TO_WORK</span></pre>
+          <pre><span class="prompt">$</span> <span class="cursor-blink">▊</span></pre>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- Visitor Counter -->
+  <div class="visitor-row">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.visitorbadge.io/api/visitors?path=caozh502.github&label=VISITORS&labelColor=%23000&countColor=%2300FF41&style=flat">
+      <img src="https://api.visitorbadge.io/api/visitors?path=caozh502.github&label=VISITORS&labelColor=%23333&countColor=%23555&style=flat" alt="visitor counter" />
+    </picture>
+  </div>
+
+  <!-- ═══════════ TECH STACK ═══════════ -->
+  <section id="tech">
+    <div class="section-header">
+      <span class="pixel-section-title">STACK</span>
+      <div class="divider"></div>
+    </div>
+    <div class="badge-grid">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+      <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+      <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+      <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" />
+      <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+      <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+      <img src="https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white" alt="ROS" />
+      <img src="https://img.shields.io/badge/CI/CD-007396?style=for-the-badge&logo=jenkins&logoColor=white" alt="CI/CD" />
+      <img src="https://img.shields.io/badge/HiL-6C47FF?style=for-the-badge&logo=hardware&logoColor=white" alt="HiL" />
+      <img src="https://img.shields.io/badge/Test_Automation-8B5CF6?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Test Automation" />
+      <img src="https://img.shields.io/badge/ISTQB-0A84FF?style=for-the-badge&logo=checkmarx&logoColor=white" alt="ISTQB" />
+      <img src="https://img.shields.io/badge/STACKIT_Cloud-0047AB?style=for-the-badge&logo=stackit&logoColor=white" alt="STACKIT Cloud" />
+      <img src="https://img.shields.io/badge/MATLAB-0076A8?style=for-the-badge&logo=mathworks&logoColor=white" alt="MATLAB" />
+      <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white" alt="Jira" />
+      <img src="https://img.shields.io/badge/Agile-10B981?style=for-the-badge&logo=agile&logoColor=white" alt="Agile" />
+      <img src="https://img.shields.io/badge/AI_Agents-9747FF?style=for-the-badge&logo=openai&logoColor=white" alt="AI Agents" />
+      <img src="https://img.shields.io/badge/Languages-DE%20EN%20CN-0099FF?style=for-the-badge&logo=googletranslate&logoColor=white" alt="DE/EN/CN" />
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
   <section id="about">
-    <div class="section-heading"><span class="zh">关于我</span><span class="en">About</span><div class="divider"></div></div>
-    <div class="grid">
-      <div class="card wide">
-        <p><span class="zh">曾在 Akkodis 担任测试自动化工程师，负责 Python 测试框架开发、HiL 系统和 CI/CD 集成。KIT 机电一体化硕士（医疗技术方向），ISTQB 认证。目前正在寻找 QA/Test Automation 岗位。</span><span class="en">Former test automation engineer at Akkodis, working on Python test frameworks, HiL systems, and CI/CD integration. M.Sc. in Mechatronics (MedTech focus) from KIT. ISTQB certified. Currently seeking QA/Test Automation roles.</span></p>
+    <div class="section-header">
+      <span class="pixel-section-title">ABOUT</span>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <p>
+          <span class="en">Test Automation Engineer at <strong>Akkodis</strong>, building Python test frameworks, HiL systems, and CI/CD pipelines. M.Sc. in Mechatronics &amp; Information Technology from <strong>KIT</strong>, B.Eng. in Mechanical Engineering. Certified <strong>ISTQB&reg; CTFL</strong>, STACKIT Cloud Engineer, and DevOps (LinkedIn). Open to <strong>QA / Test Automation</strong> roles across industries — MedTech, Aerospace, Automotive, AI &amp; beyond.</span>
+          <span class="zh">在 <strong>Akkodis</strong> 担任测试自动化工程师，负责 Python 测试框架、HiL 系统和 CI/CD 流水线。<strong>KIT</strong> 机电与信息技术硕士，机械工程学士。持有 <strong>ISTQB&reg; CTFL</strong>、STACKIT Cloud Engineer、DevOps (LinkedIn) 认证。开放接受各行业的 <strong>QA / 测试自动化</strong> 岗位 —— 医疗、航天、汽车、AI 等。</span>
+        </p>
         <div class="pill-row">
           <span class="pill">Python</span>
           <span class="pill">Test Automation</span>
           <span class="pill">HiL</span>
           <span class="pill">CI/CD</span>
           <span class="pill">C++</span>
-          <span class="pill">ISTQB</span>
+          <span class="pill">ISTQB&reg;</span>
+          <span class="pill">AI Agents</span>
+          <span class="pill">STACKIT Cloud</span>
+        </div>
+      </div>
+      <div class="stats-card">
+        <div class="stat">
+          <span class="stat-num">ISTQB&reg;</span>
+          <span class="stat-label">CTFL Certified</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">KIT</span>
+          <span class="stat-label">M.Sc. Mechatronics &amp; IT</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Akkodis</span>
+          <span class="stat-label">Test Automation Engineer</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- ═══════════ PROJECTS ═══════════ -->
   <section id="projects">
-    <div class="section-heading"><span class="zh">项目</span><span class="en">Projects</span><div class="divider"></div></div>
-    <div class="grid">
+    <div class="section-header">
+      <span class="pixel-section-title">PROJECTS</span>
+      <div class="divider"></div>
+    </div>
+    <div class="projects-grid">
 
-      <div class="card">
-        <div class="card-tag">Investment</div>
+      <div class="proj-card" data-tag="INVESTMENT">
+        <div class="proj-tag">INVESTMENT</div>
         <h3>Portfolio Monitor</h3>
-        <p><span class="zh">自动从 Trading212 拉取持仓数据，推送日报和周度操作复盘到 Telegram。包含快照对比、操作评级、板块资金流向分析。</span><span class="en">Auto-fetches Trading212 portfolio, sends daily & weekly review reports to Telegram. Includes snapshot comparison, trading rating, and sector fund flow.</span></p>
+        <p>
+          <span class="en">Auto-fetches Trading212 portfolio, sends daily &amp; weekly review reports to Telegram. Snapshot comparison, trade rating, and sector fund flow.</span>
+          <span class="zh">自动从 Trading212 拉取持仓数据，推送日报和周报到 Telegram。包含快照对比、操作评级、板块资金流向。</span>
+        </p>
         <div class="pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">Trading212 API</span>
-          <span class="pill">GitHub Actions</span>
-          <span class="pill">Telegram</span>
+          <span class="pill sm">Python</span>
+          <span class="pill sm">Trading212 API</span>
+          <span class="pill sm">GitHub Actions</span>
+          <span class="pill sm">Telegram</span>
         </div>
-        <div class="links">
-          <a class="link-chip" href="https://github.com/caozh502/portfolio-monitor" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/portfolio-monitor" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-tag">Investment</div>
+      <div class="proj-card" data-tag="INVESTMENT">
+        <div class="proj-tag">INVESTMENT</div>
         <h3>Weekly Fund Flow</h3>
-        <p><span class="zh">每周一自动生成美股资金流向报告。覆盖四大指数、11个行业板块和自选股，基于 MFI + CMF 双指标判断资金强度。</span><span class="en">Weekly US stock fund flow report covering 4 indices, 11 sectors, and watchlist. Uses MFI + CMF dual indicators for money flow analysis.</span></p>
+        <p>
+          <span class="en">Weekly US stock fund flow report covering 4 indices, 11 sectors, and watchlist. Uses MFI + CMF dual indicators.</span>
+          <span class="zh">每周美股资金流向报告，覆盖四大指数、11个行业板块和自选股。MFI + CMF 双指标判断资金强度。</span>
+        </p>
         <div class="pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">yfinance</span>
-          <span class="pill">Technical Indicators</span>
+          <span class="pill sm">Python</span>
+          <span class="pill sm">yfinance</span>
+          <span class="pill sm">Technical Indicators</span>
         </div>
-        <div class="links">
-          <a class="link-chip" href="https://github.com/caozh502/weekly-fund-flow" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/weekly-fund-flow" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-tag">Investment</div>
+      <div class="proj-card" data-tag="INVESTMENT">
+        <div class="proj-tag">INVESTMENT</div>
         <h3>Trading Signal Bot</h3>
-        <p><span class="zh">Telegram Bot，对美股做日内做T信号分析。从 VWAP、短期趋势、RSI、成交量、价位位置5个维度综合评分。</span><span class="en">Telegram bot for US stock intraday signal analysis. Multi-dimensional scoring: VWAP, trend, RSI, volume, and price level.</span></p>
+        <p>
+          <span class="en">Telegram bot for US stock intraday signal analysis. Multi-dimensional scoring: VWAP, trend, RSI, volume, and price level.</span>
+          <span class="zh">美股日内做T信号分析 Telegram Bot。从 VWAP、短期趋势、RSI、成交量、价位位置 5 个维度综合评分。</span>
+        </p>
         <div class="pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">Telegram Bot</span>
-          <span class="pill">Technical Analysis</span>
+          <span class="pill sm">Python</span>
+          <span class="pill sm">Telegram Bot</span>
+          <span class="pill sm">Technical Analysis</span>
         </div>
-        <div class="links">
-          <a class="link-chip" href="https://github.com/caozh502/trading-t-bot" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/trading-t-bot" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-tag">Automation</div>
+      <div class="proj-card" data-tag="AUTOMATION">
+        <div class="proj-tag">AUTOMATION</div>
         <h3>n8n Job Tracker</h3>
-        <p><span class="zh">自动化求职工作流：Puppeteer 爬取 LinkedIn 岗位 → DeepSeek AI 多维度匹配评分 → 写入 Notion 数据库。每日自动运行，推送 Top15 最佳匹配岗位。</span><span class="en">Automated job search workflow: Puppeteer scrapes LinkedIn → DeepSeek AI multi-dimension scoring → writes to Notion. Runs daily, outputs Top15 best-matched jobs.</span></p>
+        <p>
+          <span class="en">Automated job search workflow: Puppeteer scrapes LinkedIn → DeepSeek AI scoring → writes to Notion. Runs daily, outputs Top15 matches. Supports EN/CN languages.</span>
+          <span class="zh">自动化求职工作流：Puppeteer 爬取 LinkedIn → DeepSeek AI评分 → 写入 Notion。每日自动运行，输出 Top15 匹配岗位。支持中英文双语。</span>
+        </p>
         <div class="pill-row">
-          <span class="pill">n8n</span>
-          <span class="pill">Puppeteer</span>
-          <span class="pill">DeepSeek</span>
-          <span class="pill">Notion</span>
-          <span class="pill">Python</span>
+          <span class="pill sm">n8n</span>
+          <span class="pill sm">Puppeteer</span>
+          <span class="pill sm">DeepSeek</span>
+          <span class="pill sm">Notion</span>
         </div>
-        <div class="links">
-          <a class="link-chip" href="https://github.com/caozh502/n8n-job-tracker" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/n8n-job-tracker" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-tag">Creative</div>
+      <div class="proj-card" data-tag="CREATIVE">
+        <div class="proj-tag">CREATIVE</div>
         <h3>Dream Echo</h3>
-        <p><span class="zh">以梦境为主题的解谜互动游戏。纯 JavaScript + CSS 构建，玩家在公寓中探索、互动、解谜，揭示梦境背后的秘密。</span><span class="en">A dream-themed puzzle game built with vanilla JS + CSS. Explore an apartment, interact with objects, solve puzzles, and uncover the dream's secret.</span></p>
+        <p>
+          <span class="en">A dream-themed puzzle game built with vanilla JS + CSS. Explore an apartment, interact with objects, and uncover the secret.</span>
+          <span class="zh">以梦境为主题的解谜互动游戏。纯 JavaScript + CSS 构建，探索公寓、互动解谜。</span>
+        </p>
         <div class="pill-row">
-          <span class="pill">Vanilla JS</span>
-          <span class="pill">CSS</span>
-          <span class="pill">Interactive</span>
+          <span class="pill sm">Vanilla JS</span>
+          <span class="pill sm">CSS</span>
+          <span class="pill sm">Interactive</span>
         </div>
-        <div class="links">
-          <a class="link-chip" href="https://caozh502.github.io/Project_puzzelRoom/" target="_blank" rel="noreferrer">Live Demo</a>
-          <a class="link-chip" href="https://github.com/caozh502/Project_puzzelRoom" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="proj-links">
+          <a class="link-chip" href="https://caozh502.github.io/Project_puzzelRoom/" target="_blank" rel="noreferrer">Live Demo →</a>
+          <a class="link-chip" href="https://github.com/caozh502/Project_puzzelRoom" target="_blank" rel="noreferrer">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tag="GAME">
+        <div class="proj-tag">GAME</div>
+        <h3>Puzzel Cat</h3>
+        <p>
+          <span class="en">2D Unity puzzle game demo with interactive mechanics.</span>
+          <span class="zh">2D Unity 解谜游戏，包含交互式机制。</span>
+        </p>
+        <div class="pill-row">
+          <span class="pill sm">C#</span>
+          <span class="pill sm">Unity</span>
+          <span class="pill sm">2D</span>
+        </div>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/Project_puzzelCat" target="_blank" rel="noreferrer">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tag="ROBOTICS">
+        <div class="proj-tag">ROBOTICS</div>
+        <h3>Flight Assistant</h3>
+        <p>
+          <span class="en">Autonomous flight planning and collision avoidance for UAVs. C++ based with point cloud processing.</span>
+          <span class="zh">无人机自主飞行规划与避障系统。基于 C++ 的点云处理。</span>
+        </p>
+        <div class="pill-row">
+          <span class="pill sm">C++</span>
+          <span class="pill sm">Point Cloud</span>
+          <span class="pill sm">ROS</span>
+        </div>
+        <div class="proj-links">
+          <a class="link-chip" href="https://github.com/caozh502/autonomous-flight-assistant" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- ═══════════ CONTACT ═══════════ -->
   <section id="contact">
-    <div class="section-heading"><span class="zh">联系我</span><span class="en">Contact</span><div class="divider"></div></div>
-    <div class="grid">
-      <div class="card">
-        <h3><span class="zh">找到我</span><span class="en">Find Me</span></h3>
-        <p><span class="zh">有想法、反馈或合作意向？欢迎在以下平台找到我。</span><span class="en">Have ideas, feedback, or want to collaborate? Find me on these platforms.</span></p>
-        <div class="links">
-          <a class="link-chip" href="https://github.com/caozh502" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="link-chip" href="https://www.linkedin.com/in/jiale-cao-49b136203/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="link-chip" href="mailto:jiale.cao@outlook.com">Email</a>
+    <div class="section-header">
+      <span class="pixel-section-title">CONTACT</span>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>
+          <span class="en">Let's Build Together 🚀</span>
+          <span class="zh">一起做点什么 🚀</span>
+        </h3>
+        <p>
+          <span class="en">Have ideas, feedback, or an opportunity? Reach out!</span>
+          <span class="zh">有想法、反馈或合作机会？欢迎联系我！</span>
+        </p>
+        <div class="contact-links">
+          <a class="link-chip" href="https://github.com/caozh502" target="_blank" rel="noreferrer">🐙 GitHub</a>
+          <a class="link-chip" href="https://www.linkedin.com/in/jiale-cao-49b136203/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+          <a class="link-chip" href="mailto:jiale.cao@outlook.com">✉️ Email</a>
+          <a class="link-chip" href="https://caozh502.github.io">🌐 Portfolio</a>
         </div>
       </div>
-      <div class="card">
-        <h3><span class="zh">你可以期待</span><span class="en">What's Next</span></h3>
-        <p><span class="zh">更多的开源工具、投资策略研究，以及有趣的 side project。欢迎随时来看看。</span><span class="en">More open-source tools, investment strategy research, and fun side projects. Check back anytime.</span></p>
+      <div class="contact-card coming-soon">
+        <h3>
+          <span class="en">✦ What's Next</span>
+          <span class="zh">✦ 即将到来</span>
+        </h3>
+        <p>
+          <span class="en">More open-source tools, investment strategy research, and creative side projects. Stay tuned!</span>
+          <span class="zh">更多开源工具、投资策略研究、有趣的 side project。敬请期待！</span>
+        </p>
+        <div class="terminal-line"><span class="prompt">$</span> ./next_chapter.sh <span class="cursor-blink">▊</span></div>
       </div>
     </div>
   </section>
@@ -177,7 +341,9 @@
 </main>
 
 <footer>
-  <div>&copy; 2026 Caleb Cao &middot; <a href="https://www.linkedin.com/in/jiale-cao-49b136203/" target="_blank" rel="noreferrer">LinkedIn</a> &middot; <a href="https://github.com/caozh502" target="_blank" rel="noreferrer">GitHub</a></div>
+  <div class="footer-pixel-line">
+    [<span class="blink">■</span>] CAOZH502.DEV &copy; 2026 &middot; MADE WITH <span class="heart">&lt;3</span>
+  </div>
 </footer>
 
 <script>
@@ -187,6 +353,15 @@ function toggleLang() {
   document.body.classList.toggle('lang-zh', toZh);
   btn.textContent = toZh ? 'EN' : '中文';
 }
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 </script>
 
 </body>
